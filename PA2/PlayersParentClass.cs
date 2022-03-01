@@ -20,16 +20,8 @@ namespace PA2
             PlayerSelection = GetPlayerChar();
         }
 
-        // public static string ReturnPlayers()
-        // {
-        //     return players.ToString(); 
-        // }
-
         public static string GetPlayerName()
         {
-            // System.Console.WriteLine("Hit any [KEY] to continue....");
-            // System.Console.ReadKey();
-            // System.Console.Clear();
             System.Console.WriteLine("");
             System.Console.Write("Please enter player name: ");
             string NameOne = Console.ReadLine();

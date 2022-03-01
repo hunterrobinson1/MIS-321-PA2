@@ -12,8 +12,7 @@ namespace PA2
     {
         static void Main(string[] args)
         {
-            //int maxPower = Game.MaxPowerGenerator(); 
-            Displays.Selection(); //maxPower); 
+            Displays.Selection(); 
         }
     }
 }
