@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PA2
 {
-    public class CharacterParentClass
+    public class CharacterParentClass //character parent class all the others inherit from 
     {
         public string Name{get;set;}
         public int MaxPower{get;set;}
@@ -18,11 +18,11 @@ namespace PA2
 
         public IAttack AttackBehavior {get;set;}
 
-        public static CharacterParentClass[] characters = {new DavyJonesCharacter(), new JackSparrowCharacter(), new WillTurnerCharacter()};
+        public static CharacterParentClass[] characters = {new DavyJonesCharacter(), new JackSparrowCharacter(), new WillTurnerCharacter()}; //array of the characters
 
         public static CharacterParentClass[] Characters()
         {
-            return characters;
+            return characters; //returns the list of characters
         }
 
     }

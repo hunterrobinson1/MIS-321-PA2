@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PA2.Attacks
 {
-    public class CannonFireDJ :IAttack
+    public class CannonFireDJ :IAttack //inherits IAttack
     {
         public void Attack()
         {

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PA2
 {
-    public class DavyJonesCharacter : CharacterParentClass
+    public class DavyJonesCharacter : CharacterParentClass //inherits properties of CharacterParentClass. This is where I set them 
     {
         public DavyJonesCharacter() 
         {
@@ -17,8 +17,8 @@ namespace PA2
             Health = 100;
             AttackStrength = 85;
             DefensivePower = 45;
-            AttackBehavior = new CannonFireDJ();
-            Bio = "Cannon fire";
+            AttackBehavior = new CannonFireDJ(); //new attack behavior
+            Bio = "Cannon fire"; //bio displays their weapon, looks better like this on the display
         }
 
     }

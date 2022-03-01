@@ -9,18 +9,18 @@ namespace PA2
 {
     public class PlayersParentClass
     {
-        public string Name {get;set;}
-        public CharacterParentClass PlayerSelection{get;set;}
+        public string Name {get;set;} //gets the name 
+        public CharacterParentClass PlayerSelection{get;set;} //gets the character 
 
-        public static PlayersParentClass[] players = {new PlayersParentClass(), new PlayersParentClass()};
+        public static PlayersParentClass[] players = {new PlayersParentClass(), new PlayersParentClass()}; //player array 
         
-        public PlayersParentClass()
+        public PlayersParentClass() //constructor
         {
             Name = GetPlayerName();
             PlayerSelection = GetPlayerChar();
         }
 
-        public static string GetPlayerName()
+        public static string GetPlayerName() //methods that get called when creating a new player. Gets their name 
         {
             System.Console.WriteLine("");
             System.Console.Write("Please enter player name: ");
@@ -32,7 +32,7 @@ namespace PA2
         }
 
 
-        public CharacterParentClass GetPlayerChar()
+        public CharacterParentClass GetPlayerChar() //methods that get called when creating a new player. Get their character
         {
             Displays.DisplayCharacters();
             string userInput = Console.ReadLine();

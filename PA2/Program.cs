@@ -12,7 +12,7 @@ namespace PA2
     {
         static void Main(string[] args)
         {
-            Displays.Selection(); 
+            Displays.Selection(); //one thing in main, nice and easy to read. Thank you for taking the time to grade this, hope you have fun playing!
         }
     }
 }

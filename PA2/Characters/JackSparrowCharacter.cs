@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PA2
 {
-    public class JackSparrowCharacter : CharacterParentClass
+    public class JackSparrowCharacter : CharacterParentClass //inherits properties of CharacterParentClass. This is where I set them 
     {
         public JackSparrowCharacter() 
         {
@@ -16,8 +16,8 @@ namespace PA2
             Health = 100;
             AttackStrength = 45;
             DefensivePower = 85; 
-            AttackBehavior = new DistractOpponentJS();
-            Bio = "Distract";
+            AttackBehavior = new DistractOpponentJS(); //new attack behavior
+            Bio = "Distract"; //bio displays their weapon, looks better like this on the display
         }
     }
 }

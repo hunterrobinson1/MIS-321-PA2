@@ -13,10 +13,10 @@ namespace PA2
 
         public Game()
         {
-            PlayersParentClass PlayerOne = new PlayersParentClass();
-            PlayersParentClass PlayerTwo = new PlayersParentClass(); 
+            PlayersParentClass PlayerOne = new PlayersParentClass(); //new player object
+            PlayersParentClass PlayerTwo = new PlayersParentClass(); //new player object
         }
-        public static void LetsPlay()
+        public static void LetsPlay() //Game itself
         {
             System.Console.Clear(); 
             System.Console.WriteLine("Welcome to the Maelstrom.....");
@@ -26,20 +26,20 @@ namespace PA2
             System.Console.WriteLine("Hit any [KEY] to continue....");
             System.Console.ReadKey();
             System.Console.Clear();
-            PlayersParentClass PlayerOne = new PlayersParentClass();
-            PlayersParentClass PlayerTwo = new PlayersParentClass(); 
+            PlayersParentClass PlayerOne = new PlayersParentClass(); //declaring the new players. Gets their names and their character selection
+            PlayersParentClass PlayerTwo = new PlayersParentClass(); //declaring the new players. Gets their names and their character selection
             System.Console.WriteLine("Both players have entered their info.");
             System.Console.WriteLine("Hit any [KEY] to continue....");
             System.Console.ReadKey();
             System.Console.Clear();
             System.Console.ForegroundColor = ConsoleColor.Blue;
-            System.Console.WriteLine("Player ones name is: " + PlayerOne.Name);
-            System.Console.WriteLine("Player ones character is: " + PlayerOne.PlayerSelection.Name);
+            System.Console.WriteLine("Player ones name is: " + PlayerOne.Name); //player ones name 
+            System.Console.WriteLine("Player ones character is: " + PlayerOne.PlayerSelection.Name); //their selection
             System.Console.ResetColor();
             Console.WriteLine("()--()--()--()--()--()--()--()--()--()--()--()--()--()--()-()--()");
             System.Console.ForegroundColor = ConsoleColor.Red;
-            System.Console.WriteLine("Player twos name is: " + PlayerTwo.Name);
-            System.Console.WriteLine("Player twos character is: " + PlayerTwo.PlayerSelection.Name);
+            System.Console.WriteLine("Player twos name is: " + PlayerTwo.Name); //player two name 
+            System.Console.WriteLine("Player twos character is: " + PlayerTwo.PlayerSelection.Name); //their selection
             System.Console.ResetColor();
             Console.WriteLine("()--()--()--()--()--()--()--()--()--()--()--()--()--()--()-()--()");
             System.Console.WriteLine("");
@@ -52,17 +52,17 @@ namespace PA2
             System.Console.WriteLine("Hit any [KEY] to continue....");
             System.Console.ReadKey();
             System.Console.Clear();
-            Random coinFlip = new Random();
+            Random coinFlip = new Random(); //Coimn flip that goes into an if and an else if depending on if it lands heads or tails
             int number = coinFlip.Next(1,3);
 
             if(number ==1) //if player one goes first
             {
-                System.Console.WriteLine("The coin landed heads! " + PlayerOne.Name + " will attack first!");
+                System.Console.WriteLine("The coin landed heads! " + PlayerOne.Name + " will attack first!"); //lands heads player one attacks first
                 System.Console.WriteLine("Hit any [KEY] to continue....");
                 System.Console.ReadKey();
                 System.Console.Clear();
 
-                double bonus;  
+                double bonus;  //all the scenarios with the bonus 
                 if(PlayerOne.PlayerSelection.Name == "Jack Sparrow" && PlayerTwo.PlayerSelection.Name == "Will Turner")
                 {
                     System.Console.WriteLine("Jack Sparrows attack bonus has been activated... Good luck Will Turner!");
@@ -88,22 +88,21 @@ namespace PA2
                 {
                     System.Console.ForegroundColor = ConsoleColor.Blue;
                     int attack = AttackDamageGenerator();
-                    System.Console.WriteLine(PlayerOne.Name + " health is at: " + PlayerOne.PlayerSelection.Health);
+                    System.Console.WriteLine(PlayerOne.Name + " health is at: " + PlayerOne.PlayerSelection.Health); //shows health
                     System.Console.WriteLine("");
-                    System.Console.WriteLine( PlayerOne.Name + " power level is at: " + PlayerOne.PlayerSelection.MaxPower);
+                    System.Console.WriteLine( PlayerOne.Name + " power level is at: " + PlayerOne.PlayerSelection.MaxPower); //shows max power
                     System.Console.WriteLine("");
-                    System.Console.WriteLine(PlayerOne.Name + " has attacked and has used " + PlayerOne.PlayerSelection.Bio);
+                    System.Console.WriteLine(PlayerOne.Name + " has attacked and has used " + PlayerOne.PlayerSelection.Bio); //shows how theyve been attacked
                     System.Console.WriteLine("");
-                    System.Console.WriteLine("Damage inflicted: " + attack + " to " + PlayerTwo.Name);
+                    System.Console.WriteLine("Damage inflicted: " + attack + " to " + PlayerTwo.Name); //shows damage inflicted
                     System.Console.WriteLine("");
-                    //System.Console.WriteLine(PlayerOne.Name + " inflicted " + attack + " HP to " + PlayerTwo.Name);
-                    PlayerTwo.PlayerSelection.Health = PlayerTwo.PlayerSelection.Health - attack;
-                    System.Console.WriteLine(PlayerTwo.Name + " now has " + PlayerTwo.PlayerSelection.Health + " health");
+                    PlayerTwo.PlayerSelection.Health = PlayerTwo.PlayerSelection.Health - attack; //sets their health
+                    System.Console.WriteLine(PlayerTwo.Name + " now has " + PlayerTwo.PlayerSelection.Health + " health"); //displayes their health after the attack 
                     System.Console.WriteLine("");
                     System.Console.ResetColor();
-                    if(PlayerTwo.PlayerSelection.Health <= 0)
+                    if(PlayerTwo.PlayerSelection.Health <= 0) //checks if player health is less than one 
                     {
-                        System.Console.ForegroundColor = ConsoleColor.Blue;
+                        System.Console.ForegroundColor = ConsoleColor.Blue; //if true then you can return to the main menu and play again
                         System.Console.WriteLine(PlayerOne.Name + " has won the game!");
                         System.Console.WriteLine("");
                         System.Console.WriteLine("If you wish to play again hit any [KEY] to return to the main menu.");
@@ -118,22 +117,22 @@ namespace PA2
                     System.Console.Clear();
                     System.Console.ForegroundColor = ConsoleColor.Red;
                     int attackTwo = AttackDamageGenerator();
-                    System.Console.WriteLine(PlayerTwo.Name + " health is at: " + PlayerTwo.PlayerSelection.Health);
+                    System.Console.WriteLine(PlayerTwo.Name + " health is at: " + PlayerTwo.PlayerSelection.Health); //displays the health
                     System.Console.WriteLine("");
-                    System.Console.WriteLine(PlayerTwo.Name + " has attacked and has used " + PlayerTwo.PlayerSelection.Bio);
+                    System.Console.WriteLine(PlayerTwo.Name + " has attacked and has used " + PlayerTwo.PlayerSelection.Bio); //dispays the attack 
                     System.Console.WriteLine("");
-                    System.Console.WriteLine("Damage inflicted: " + attackTwo + " to " + PlayerOne.Name);
+                    System.Console.WriteLine("Damage inflicted: " + attackTwo + " to " + PlayerOne.Name); //displays damage inflicted 
                     System.Console.WriteLine("");
-                    PlayerOne.PlayerSelection.Health = PlayerOne.PlayerSelection.Health - attackTwo;
-                    System.Console.WriteLine(PlayerOne.Name + " now has " + PlayerOne.PlayerSelection.Health + " health");
+                    PlayerOne.PlayerSelection.Health = PlayerOne.PlayerSelection.Health - attackTwo; //math for their health
+                    System.Console.WriteLine(PlayerOne.Name + " now has " + PlayerOne.PlayerSelection.Health + " health"); //displays their health after the attack
                     System.Console.ResetColor();
                     System.Console.WriteLine("");
                     System.Console.WriteLine("Hit any [KEY] to continue to the next round");
                     System.Console.ReadKey();
                     System.Console.Clear();
-                    if(PlayerOne.PlayerSelection.Health <= 0)
+                    if(PlayerOne.PlayerSelection.Health <= 0) //checks if player health is less than one 
                     {
-                        System.Console.ForegroundColor = ConsoleColor.Red;
+                        System.Console.ForegroundColor = ConsoleColor.Red; //if true then you can return to the main menu and play again
                         System.Console.WriteLine(PlayerTwo.Name + " has won the game!");
                         System.Console.WriteLine("");
                         System.Console.WriteLine("If you wish to play again hit any [KEY] to return to the main menu.");
@@ -150,12 +149,12 @@ namespace PA2
             }
             else if(number == 2) //if player 2 goes first 
             {
-                System.Console.WriteLine("The coin landed tails! " + PlayerTwo.Name + " will attack first");
+                System.Console.WriteLine("The coin landed tails! " + PlayerTwo.Name + " will attack first"); //player two attacks first if tails
                 System.Console.WriteLine("Hit any [KEY] to continue....");
                 System.Console.ReadKey();
                 System.Console.Clear();
                 double bonus;
-                if(PlayerTwo.PlayerSelection.Name == "Jack Sparrow" && PlayerOne.PlayerSelection.Name == "Will Turner")
+                if(PlayerTwo.PlayerSelection.Name == "Jack Sparrow" && PlayerOne.PlayerSelection.Name == "Will Turner") //all the scenarios for the bonus
                 {
                     System.Console.WriteLine("Jack Sparrows attack bonus has been activated... Good luck Will Turner!");
                     bonus = PlayerTwo.PlayerSelection.MaxPower * 1.2;
@@ -175,28 +174,25 @@ namespace PA2
                     bonus = PlayerTwo.PlayerSelection.MaxPower * 1;
                 } 
 
-                // int playerTwoHealth = 100;
-                // int playerOneHealth = 100;
-                while(PlayerOne.PlayerSelection.Health > 0|| PlayerTwo.PlayerSelection.Health > 0)
+                while(PlayerOne.PlayerSelection.Health > 0|| PlayerTwo.PlayerSelection.Health > 0) //game itself
                 {
                     System.Console.ForegroundColor = ConsoleColor.Red;
-                    System.Console.WriteLine(PlayerTwo.Name + " health is at: " + PlayerTwo.PlayerSelection.Health);
+                    System.Console.WriteLine(PlayerTwo.Name + " health is at: " + PlayerTwo.PlayerSelection.Health); //displays health 
                     System.Console.WriteLine("");
-                    System.Console.WriteLine( PlayerTwo.Name + " power level is at: " + PlayerTwo.PlayerSelection.MaxPower);
+                    System.Console.WriteLine( PlayerTwo.Name + " power level is at: " + PlayerTwo.PlayerSelection.MaxPower); //displays power level 
                     int attack = AttackDamageGenerator();
                     System.Console.WriteLine("");
-                    System.Console.WriteLine(PlayerTwo.Name + " has attacked and has used " + PlayerTwo.PlayerSelection.Bio);
+                    System.Console.WriteLine(PlayerTwo.Name + " has attacked and has used " + PlayerTwo.PlayerSelection.Bio); //displays the attack 
                     System.Console.WriteLine("");
-                    System.Console.WriteLine("Damage inflicted: " + attack + " to " + PlayerOne.Name);
+                    System.Console.WriteLine("Damage inflicted: " + attack + " to " + PlayerOne.Name); //displays damage inflicted
                     System.Console.WriteLine("");
-                    //System.Console.WriteLine(PlayerTwo.Name + " inflicted " + attack + " HP to " + PlayerOne.Name);
-                    PlayerOne.PlayerSelection.Health = PlayerOne.PlayerSelection.Health- attack;
-                    System.Console.WriteLine(PlayerOne.Name + " now has " + PlayerOne.PlayerSelection.Health + " health");
+                    PlayerOne.PlayerSelection.Health = PlayerOne.PlayerSelection.Health- attack; //math for the turn
+                    System.Console.WriteLine(PlayerOne.Name + " now has " + PlayerOne.PlayerSelection.Health + " health"); //displays health after the attack 
                     System.Console.WriteLine("");
                     System.Console.ResetColor();
-                    if(PlayerOne.PlayerSelection.Health <= 0)
+                    if(PlayerOne.PlayerSelection.Health <= 0) //checks the players health and if its 0 then the games over
                     {
-                        System.Console.ForegroundColor = ConsoleColor.Red;
+                        System.Console.ForegroundColor = ConsoleColor.Red; //if true then you can return to the main menu and play again
                         System.Console.WriteLine(PlayerTwo.Name + " has won the game!");
                         System.Console.WriteLine("");
                         System.Console.WriteLine("If you wish to play again hit any [KEY] to return to the main menu.");
@@ -211,23 +207,22 @@ namespace PA2
                     System.Console.Clear();
                     System.Console.ForegroundColor = ConsoleColor.Blue;
                     int attackTwo = AttackDamageGenerator();
-                    System.Console.WriteLine(PlayerOne.Name + " health is at: " + PlayerOne.PlayerSelection.Health);
+                    System.Console.WriteLine(PlayerOne.Name + " health is at: " + PlayerOne.PlayerSelection.Health); //Displays the health
                     System.Console.WriteLine("");
-                    System.Console.WriteLine(PlayerOne.Name + " has attacked and has used " + PlayerOne.PlayerSelection.Bio);
+                    System.Console.WriteLine(PlayerOne.Name + " has attacked and has used " + PlayerOne.PlayerSelection.Bio); //displays the attack 
                     System.Console.WriteLine("");
-                    System.Console.WriteLine("Damage inflicted: " + attackTwo + " to " + PlayerTwo.Name);
+                    System.Console.WriteLine("Damage inflicted: " + attackTwo + " to " + PlayerTwo.Name); //damage inflicted after attack 
                     System.Console.WriteLine("");
-                    //System.Console.WriteLine(PlayerOne.Name + " inflicted " + attackTwo + " HP to " + PlayerTwo.Name);
-                    PlayerTwo.PlayerSelection.Health = PlayerTwo.PlayerSelection.Health - attackTwo; 
-                    System.Console.WriteLine(PlayerTwo.Name + " now has " + PlayerTwo.PlayerSelection.Health + " Health");
+                    PlayerTwo.PlayerSelection.Health = PlayerTwo.PlayerSelection.Health - attackTwo; //math for the attack 
+                    System.Console.WriteLine(PlayerTwo.Name + " now has " + PlayerTwo.PlayerSelection.Health + " Health"); //displays health aftet the attack 
                     System.Console.ResetColor();
                     System.Console.WriteLine("");
                     System.Console.WriteLine("Hit any [KEY] to continue to the next round");
                     System.Console.ReadKey();
                     System.Console.Clear();
-                    if(PlayerTwo.PlayerSelection.Health <= 0) 
+                    if(PlayerTwo.PlayerSelection.Health <= 0) //checks the players health and if its 0 then the games over
                     {
-                        System.Console.ForegroundColor = ConsoleColor.Blue;
+                        System.Console.ForegroundColor = ConsoleColor.Blue; //if true then you can return to the main menu and play againd
                         System.Console.WriteLine(PlayerOne.Name + " has won the game!");
                         System.Console.WriteLine("");
                         System.Console.WriteLine("If you wish to play again hit any [KEY] to return to the main menu.");
@@ -243,7 +238,7 @@ namespace PA2
               
         }
 
-        public static int AttackDamageGenerator()
+        public static int AttackDamageGenerator() //attack damage generator 
         {
             Random r = new Random();
             int attackDamage = r.Next(1,100);

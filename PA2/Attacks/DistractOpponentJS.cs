@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PA2.Attacks
 {
-    public class DistractOpponentJS :IAttack
+    public class DistractOpponentJS :IAttack //inherits IAttack
     {
         public void Attack()
         {
